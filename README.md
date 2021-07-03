@@ -73,3 +73,13 @@ Halo 使用 GPL-v3.0 协议开源，请尽量遵守开源协议。
 
 <https://docs.halo.run/zh/contribution/sponsor>
 
+## 可能错误
+
+> Errors occurred while build effective model from /${env.ANDROID_HOME}/platforms/android-22/android.jar in com.google.zxing:core:3.4.0:
+> ...android.jar must specify an absolute path but is /${env.ANDROID_HOME}/platforms/android-22/android.jar in com.google.zxing:core:3.4.0
+
+解决：
+1. 创建一个android.jar的空文件
+2. 将该文件的绝对路径替换文件zxing-parent-3.4.0.pom中的systemPath
+
+Gradle的Jar包下载位置在：`${GRANDLE_USER_HOME}/caches/modules-2/files-2.1/`
